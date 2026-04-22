@@ -97,11 +97,13 @@ class _ClipPickerScreenState extends State<ClipPickerScreen> {
     for (final AssetEntity a in assets) {
       final file = await a.file;
       if (file == null) continue;
-      out.add(ClipRef(
-        sourcePath: file.path,
-        userTag: tag,
-        durationMs: a.duration * 1000,
-      ));
+      out.add(
+        ClipRef(
+          sourcePath: file.path,
+          userTag: tag,
+          durationMs: a.duration * 1000,
+        ),
+      );
     }
     return out;
   }

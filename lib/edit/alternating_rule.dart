@@ -16,20 +16,24 @@ EditPlan buildAlternatingPlan({
     final int durB = _pickDuration(defaultClipDurationMs, clipsB[k].durationMs);
     if (durA <= 0 || durB <= 0) continue;
 
-    result.add(EditPlanClip(
-      index: index++,
-      sourcePath: clipsA[k].sourcePath,
-      startMs: 0,
-      durationMs: durA,
-      userTag: 'A',
-    ));
-    result.add(EditPlanClip(
-      index: index++,
-      sourcePath: clipsB[k].sourcePath,
-      startMs: 0,
-      durationMs: durB,
-      userTag: 'B',
-    ));
+    result.add(
+      EditPlanClip(
+        index: index++,
+        sourcePath: clipsA[k].sourcePath,
+        startMs: 0,
+        durationMs: durA,
+        userTag: 'A',
+      ),
+    );
+    result.add(
+      EditPlanClip(
+        index: index++,
+        sourcePath: clipsB[k].sourcePath,
+        startMs: 0,
+        durationMs: durB,
+        userTag: 'B',
+      ),
+    );
   }
 
   return EditPlan(result);
