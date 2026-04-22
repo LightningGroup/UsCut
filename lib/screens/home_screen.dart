@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'capture_screen.dart';
 import 'clip_picker_screen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -18,27 +19,45 @@ class HomeScreen extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               const Text(
-                'Stage 1 Prototype',
+                'UsCut',
                 style: TextStyle(fontSize: 24, fontWeight: FontWeight.w600),
               ),
               const SizedBox(height: 12),
               const Text(
-                'Pick 3 clips as "A" and 3 clips as "B".\n'
+                'Shoot or pick 3 clips each as "A" and "B".\n'
                 'UsCut interleaves them into a 9:16 mp4.',
                 textAlign: TextAlign.center,
                 style: TextStyle(color: Colors.black54),
               ),
               const SizedBox(height: 32),
-              FilledButton.icon(
-                icon: const Icon(Icons.movie_filter),
-                label: const Text('Pick Clips'),
-                onPressed: () {
-                  Navigator.of(context).push(
-                    MaterialPageRoute<void>(
-                      builder: (_) => const ClipPickerScreen(),
-                    ),
-                  );
-                },
+              SizedBox(
+                width: double.infinity,
+                child: FilledButton.icon(
+                  icon: const Icon(Icons.videocam),
+                  label: const Text('Record Clips'),
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute<void>(
+                        builder: (_) => const CaptureScreen(),
+                      ),
+                    );
+                  },
+                ),
+              ),
+              const SizedBox(height: 12),
+              SizedBox(
+                width: double.infinity,
+                child: OutlinedButton.icon(
+                  icon: const Icon(Icons.movie_filter),
+                  label: const Text('Pick from Gallery'),
+                  onPressed: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute<void>(
+                        builder: (_) => const ClipPickerScreen(),
+                      ),
+                    );
+                  },
+                ),
               ),
             ],
           ),

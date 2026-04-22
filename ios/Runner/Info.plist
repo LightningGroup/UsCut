@@ -69,6 +69,8 @@
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>UsCut saves the final edited video to your photo library.</string>
 	<key>NSCameraUsageDescription</key>
-	<string>(reserved for Stage 3) UsCut will record clips with your camera.</string>
+	<string>UsCut records short clips with your camera to build the edit.</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>UsCut accesses the microphone when recording video clips.</string>
 </dict>
 </plist>
